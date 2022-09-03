@@ -337,8 +337,10 @@ if __name__ == '__main__':
         addr = None
         gps = None
 
-    # content = 'submit time : {}\naddress : {}\ngps : {}'.format(submit_time,addr,gps)
-    # email = Email()
-    # email.sendemail(daily_fudan.is_submit,content)
+    if not daily_fudan.is_submit :
+        # 没有打卡成功发送邮件提醒我一下
+        content = 'submit time : {}\naddress : {}\ngps : {}'.format(submit_time,addr,gps)
+        email = Email()
+        email.sendemail(daily_fudan.is_submit,content)
 
     daily_fudan.close()
