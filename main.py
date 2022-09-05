@@ -304,8 +304,7 @@ def get_account():
 
     return uid, psw
 
-
-if __name__ == '__main__':
+def main():
     uid, psw = get_account()
     # print(uid, psw)
     zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
@@ -344,3 +343,14 @@ if __name__ == '__main__':
         email.sendemail(daily_fudan.is_submit,content)
 
     daily_fudan.close()
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except:
+        # 中间有任何一个环节出现问题都要发邮件通知我
+        content = 'There are some mistakes happened ！'
+        email = Email()
+        email.sendemail(False,content)
+    
