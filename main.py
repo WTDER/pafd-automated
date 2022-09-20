@@ -215,7 +215,7 @@ class Zlapp(Fudan):
 
         print("\n\n◉◉提交中")
 
-        time.sleep(random.randint(0,10*60))
+        # time.sleep(random.randint(0,10*60))
         # 随机等待 0-10 分钟
 
         self.submit_time = datetime.now().strftime('%Y.%m.%d-%H:%M:%S')
